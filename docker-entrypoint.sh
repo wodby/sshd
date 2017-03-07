@@ -21,6 +21,10 @@ if [[ ! -f /root/.ssh/id_rsa ]]; then
     echo
 fi
 
+if [[ ! -f /root/.ssh/id_rsa ]]; then
+    gotpl /etc/gotpl/ssh_config.tpl > /root/.ssh/config
+fi
+
 mkdir -p /root/.ssh
 gotpl /etc/gotpl/authorized_keys.tpl > /root/.ssh/authorized_keys
 chmod 0700 -R /root/.ssh

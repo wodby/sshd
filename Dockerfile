@@ -20,7 +20,7 @@ VOLUME /root/.ssh
 
 EXPOSE 22
 
-COPY authorized_keys.tpl /etc/gotpl/
+COPY templates/ /etc/gotpl/
 COPY docker-entrypoint.sh /usr/local/bin/
 
 ENTRYPOINT ["docker-entrypoint.sh"]
