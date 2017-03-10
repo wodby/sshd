@@ -1,3 +1,3 @@
 Host *
-StrictHostKeyChecking no
-UserKnownHostsFile=/dev/nul
+  StrictHostKeyChecking no
+  UserKnownHostsFile=/dev/null
