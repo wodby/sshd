@@ -21,7 +21,7 @@ if [[ ! -f /root/.ssh/id_rsa ]]; then
     echo
 fi
 
-if [[ ! -f /root/.ssh/id_rsa ]]; then
+if [[ ! -f /root/.ssh/config ]]; then
     gotpl /etc/gotpl/ssh_config.tpl > /root/.ssh/config
 fi
 
