@@ -27,6 +27,7 @@ fi
 
 mkdir -p /root/.ssh
 gotpl /etc/gotpl/authorized_keys.tpl > /root/.ssh/authorized_keys
-chmod 0700 -R /root/.ssh
+chown -R root:root /root/.ssh
+chmod -R 0700 /root/.ssh
 
 exec "$@"
