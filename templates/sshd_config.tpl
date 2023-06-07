@@ -1,5 +1,5 @@
 AllowTcpForwarding yes
-GatewayPorts no
+GatewayPorts yes
 X11Forwarding no
 
 Subsystem	sftp	internal-sftp
