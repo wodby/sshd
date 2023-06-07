@@ -25,6 +25,8 @@ if [[ ! -f /root/.ssh/config ]]; then
     gotpl /etc/gotpl/ssh_config.tpl > /root/.ssh/config
 fi
 
+gotpl /etc/gotpl/sshd_config.tpl > /etc/ssh/sshd_config
+
 mkdir -p /root/.ssh
 gotpl /etc/gotpl/authorized_keys.tpl > /root/.ssh/authorized_keys
 chown -R root:root /root/.ssh
