@@ -1,0 +1,21 @@
+name: Build
+description: Build sshd image
+inputs:
+  version:
+    description: version
+    required: true
+  tags:
+    description: image tags
+    required: true
+runs:
+  using: "composite"
+  steps:
+  - name: Build image
+    env:
+      TAGS: ${{ inputs.tags }}
+    run: |
+      set -e
+      make
+      make test
+      . $GITHUB_ACTION_PATH/release.sh
+    shell: bash

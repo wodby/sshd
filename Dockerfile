@@ -1,18 +1,13 @@
-FROM alpine:3.5
+ARG BASE_IMAGE_TAG
 
-ENV GOTLP_VER 0.1.5
+FROM wodby/alpine:${BASE_IMAGE_TAG}
 
-RUN apk add --no-cache \
-        bash \
-        ca-certificates \
-        tar \
-        wget \
-        curl \
-        openssh && \
-
-    wget -qO- https://github.com/wodby/gotpl/releases/download/${GOTLP_VER}/gotpl-alpine-linux-amd64-${GOTLP_VER}.tar.gz \
-        | tar xz -C /usr/local/bin && \
-
+RUN apk add --no-cache openssh; \
+    \
+    dockerplatform=${TARGETPLATFORM:-linux\/amd64};\
+    gotpl_url="https://github.com/wodby/gotpl/releases/download/0.3.3/gotpl-${dockerplatform/\//-}.tar.gz"; \
+    wget -qO- "${gotpl_url}" | tar xz --no-same-owner -C /usr/local/bin; \
+    \
     echo GatewayPorts clientspecified >> /etc/ssh/sshd_config
 
 RUN mkdir /root/.ssh

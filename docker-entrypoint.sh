@@ -14,7 +14,7 @@ if [[ ! -f /root/.ssh/id_rsa ]]; then
     ssh-keygen -b 2048 -q -t rsa -N "" -f /root/.ssh/id_rsa
     echo
     echo ----------------------------------------------
-    echo Genrated RSA key:
+    echo Generated RSA key:
     cat /root/.ssh/id_rsa.pub
     echo
     echo ----------------------------------------------
