@@ -2,7 +2,7 @@
 
 TAG ?= latest
 
-ALPINE_VER ?= 3.18
+ALPINE_VER ?= 3.20
 
 ifeq ($(BASE_IMAGE_STABILITY_TAG),)
     BASE_IMAGE_TAG := $(ALPINE_VER)
