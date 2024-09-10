@@ -17,6 +17,7 @@ runs:
   - name: Build image
     env:
       TAGS: ${{ inputs.tags }}
+      PLATFORM: ${{ inputs.platform }}
     run: |
       set -e
       make buildx-build-amd64
