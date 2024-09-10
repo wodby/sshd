@@ -7,6 +7,10 @@ inputs:
   tags:
     description: image tags
     required: true
+  platform:
+    description: docker platform
+    required: false
+    default: linux/amd64
 runs:
   using: "composite"
   steps:
@@ -15,7 +19,8 @@ runs:
       TAGS: ${{ inputs.tags }}
     run: |
       set -e
-      make
+      make buildx-build-amd64
       make test
+      make buildx-build
       . $GITHUB_ACTION_PATH/release.sh
     shell: bash
