@@ -10,8 +10,6 @@ on:
 
 env:
   BASE_IMAGE_STABILITY_TAG: 2.15.1
-  DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-  DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 
 jobs:
   sshd:
@@ -23,6 +21,9 @@ jobs:
         platforms: amd64,arm64
     - uses: docker/setup-buildx-action@v3
     - uses: ./.github/actions
+      env:
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
       with:
         tags: latest
         platform: linux/amd64,linux/arm64
