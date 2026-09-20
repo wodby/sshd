@@ -22,7 +22,7 @@ NAME = sshd
 ifneq ($(IMAGE_REVISION),)
     ifneq ($(TAG),latest)
         override TAG := $(TAG)-$(IMAGE_REVISION)
-    else
+    else ifneq ($(filter r%,$(IMAGE_REVISION)),)
         override TAG := $(IMAGE_REVISION)
     endif
 endif
