@@ -8,4 +8,4 @@
 
 Use image revision tags such as `wodby/sshd:rN` to select a Wodby image revision.
 See [release tags](https://github.com/wodby/sshd/tags) for available revisions and the [image revision policy](https://github.com/wodby/images#image-revisions) for upgrade guidance.
-Existing SemVer image tags remain available.
+Previously published image tags remain available.
