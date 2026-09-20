@@ -7,5 +7,6 @@
 ## Image revisions
 
 Use image revision tags such as `wodby/sshd:rN` to select a Wodby image revision.
+Image revisions start at `r0` and increase with each release.
 See [release tags](https://github.com/wodby/sshd/tags) for available revisions and the [image revision policy](https://github.com/wodby/images#image-revisions) for upgrade guidance.
 Previously published image tags remain available.
