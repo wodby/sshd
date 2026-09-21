@@ -27,3 +27,15 @@ jobs:
       with:
         tags: latest
         platform: linux/amd64,linux/arm64
+
+  image-release:
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/r')
+    needs: [ sshd ]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    concurrency:
+      group: image-release-${{ github.ref }}
+      cancel-in-progress: false
+    steps:
+      - uses: wodby/images/.github/actions/image-release@412e2d9ce29c41835ff653b0945bba72eabd9efb
