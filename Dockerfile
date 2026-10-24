@@ -4,9 +4,6 @@ FROM wodby/alpine:${BASE_IMAGE_TAG}
 
 ARG TARGETPLATFORM
 
-# Refresh inherited security fixes when rebuilding this image.
-RUN apk upgrade --no-cache
-
 RUN apk add --no-cache openssh; \
     \
     dockerplatform=${TARGETPLATFORM:-linux\/amd64};\
