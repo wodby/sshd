@@ -2,6 +2,8 @@ ARG BASE_IMAGE_TAG
 
 FROM wodby/alpine:${BASE_IMAGE_TAG}
 
+ARG TARGETPLATFORM
+
 # Refresh inherited security fixes when rebuilding this image.
 RUN apk upgrade --no-cache
 

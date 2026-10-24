@@ -6,7 +6,7 @@ IMAGE_REVISION ?= $(STABILITY_TAG)
 
 TAG ?= latest
 
-ALPINE_VER ?= 3.20
+ALPINE_VER ?= 3.24
 
 PLATFORM ?= linux/arm64
 
@@ -54,7 +54,7 @@ buildx-push:
 	    ./
 
 test:
-	echo "no tests :("
+	docker run --rm $(REPO):$(TAG) /usr/sbin/sshd -t
 
 push:
 	docker push $(REPO):$(TAG)
