@@ -9,7 +9,7 @@ on:
     - '*'
 
 env:
-  BASE_IMAGE_REVISION: 2.15.1
+  BASE_IMAGE_REVISION: r8
 
 jobs:
   sshd:

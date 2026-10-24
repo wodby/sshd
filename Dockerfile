@@ -2,6 +2,8 @@ ARG BASE_IMAGE_TAG
 
 FROM wodby/alpine:${BASE_IMAGE_TAG}
 
+ARG TARGETPLATFORM
+
 RUN apk add --no-cache openssh; \
     \
     dockerplatform=${TARGETPLATFORM:-linux\/amd64};\
